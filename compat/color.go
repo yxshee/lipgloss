@@ -22,7 +22,7 @@ var (
 //
 // Example usage:
 //
-//	color := lipgloss.AdaptiveColor{Light: "#0000ff", Dark: "#000099"}
+//	color := compat.AdaptiveColor{Light: lipgloss.Color("#0000ff"), Dark: lipgloss.Color("#000099")}
 type AdaptiveColor struct {
 	Light color.Color
 	Dark  color.Color

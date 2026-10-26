@@ -21,12 +21,12 @@ const HeaderRow int = -1
 //
 //	t := table.New().
 //	    Headers("Name", "Age").
-//	    Row("Kini", 4).
-//	    Row("Eli", 1).
-//	    Row("Iris", 102).
+//	    Row("Kini", "4").
+//	    Row("Eli", "1").
+//	    Row("Iris", "102").
 //	    StyleFunc(func(row, col int) lipgloss.Style {
 //	        switch {
-//	           case row == 0:
+//	           case row == table.HeaderRow:
 //	               return HeaderStyle
 //	           case row%2 == 0:
 //	               return EvenRowStyle

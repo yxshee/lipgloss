@@ -240,8 +240,8 @@ func isDarkColor(c color.Color) bool {
 //	p := colorprofile.Detect(os.Stderr, os.Environ())
 //	complete := lipgloss.Complete(p)
 //	color := complete(
-//		lipgloss.Color(1), // ANSI
-//		lipgloss.Color(124), // ANSI256
+//		lipgloss.Color("1"), // ANSI
+//		lipgloss.Color("124"), // ANSI256
 //		lipgloss.Color("#ff34ac"), // TrueColor
 //	)
 //	fmt.Println("Ooh, pretty color: ", color)
@@ -257,8 +257,8 @@ type CompleteFunc func(ansi, ansi256, truecolor color.Color) color.Color
 //	p := colorprofile.Detect(os.Stderr, os.Environ())
 //	complete := lipgloss.Complete(p)
 //	color := complete(
-//	    lipgloss.Color(1), // ANSI
-//	    lipgloss.Color(124), // ANSI256
+//	    lipgloss.Color("1"), // ANSI
+//	    lipgloss.Color("124"), // ANSI256
 //	    lipgloss.Color("#ff34ac"), // TrueColor
 //	)
 //	fmt.Println("Ooh, pretty color: ", color)

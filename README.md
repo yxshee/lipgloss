@@ -413,7 +413,7 @@ b := lipgloss.NewLayer(bitterMelon).X(22).Y(1)
 c := lipgloss.NewLayer(sriracha).X(11).Y(7)
 
 // Composite 'em and render.
-output := compositor.Compose(a, b, c).Render()
+output := lipgloss.NewCompositor(a, b, c).Render()
 ```
 
 For a more thorough example, see [the canvas
@@ -900,7 +900,7 @@ lipgloss.Fprintf(os.Stderr, "my fave colors are %s and %s", a, b)
 ### Complete Colors
 
 In some cases where you may want to specify exact values for each color profile
-(ANSI 16, ANSI 156, and TrueColor). For these cases, use the `Complete` helper:
+(ANSI 16, ANSI 256, and TrueColor). For these cases, use the `Complete` helper:
 
 ```go
 // You'll need the colorprofile package.
@@ -910,7 +910,7 @@ import "github.com/charmbracelet/colorprofile"
 profile := colorprofile.Detect(os.Stdout, os.Environ())
 
 // Create a function for rendering the appropriate color based on the profile.
-var completeColor := lipgloss.Complete(profile)
+completeColor := lipgloss.Complete(profile)
 
 // Now we'll choose the appropriate color at runtime.
 myColor := completeColor(ansiColor, ansi256Color, trueColor)
@@ -928,9 +928,9 @@ the Lip Gloss writer functions, which are a drop-in replacement for the `fmt`
 package:
 
 ```go
-s := lipgloss.NewStyle()
-    .Foreground(lipgloss.Color("#EB4268"))
-    .Render("Hello!")
+s := lipgloss.NewStyle().
+    Foreground(lipgloss.Color("#EB4268")).
+    Render("Hello!")
 
 // Downsample if needed and print to stdout.
 lipgloss.Println(s)

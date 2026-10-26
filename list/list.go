@@ -9,10 +9,10 @@
 //		"Cashews",
 //		"Milk",
 //		list.New(
-//			"Almond Milk"
-//			"Coconut Milk"
-//			"Full Fat Milk"
-//		)
+//			"Almond Milk",
+//			"Coconut Milk",
+//			"Full Fat Milk",
+//		),
 //		"Eggs",
 //		"Fish Cake",
 //		"Leeks",
@@ -256,7 +256,7 @@ func (l *List) Item(item any) *List {
 // Items appends multiple items to the list.
 //
 //	l := list.New().
-//		Items("Foo", "Bar", "Baz"),
+//		Items("Foo", "Bar", "Baz")
 func (l *List) Items(items ...any) *List {
 	for _, item := range items {
 		l.Item(item)

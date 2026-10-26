@@ -804,7 +804,7 @@ func (s Style) StrikethroughSpaces(v bool) Style {
 // Example:
 //
 //	s := NewStyle().Transform(strings.ToUpper)
-//	fmt.Println(s.Render("raow!") // "RAOW!"
+//	fmt.Println(s.Render("raow!")) // "RAOW!"
 func (s Style) Transform(fn func(string) string) Style {
 	s.set(transformKey, fn)
 	return s

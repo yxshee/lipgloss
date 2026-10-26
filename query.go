@@ -74,7 +74,7 @@ func BackgroundColor(in term.File, out term.File) (bg color.Color, err error) {
 //
 //	hasDarkBG := HasDarkBackground(os.Stdin, os.Stdout)
 //	lightDark := LightDark(hasDarkBG)
-//	myHotColor := lightDark("#ff0000", "#0000ff")
+//	myHotColor := lightDark(Color("#ff0000"), Color("#0000ff"))
 //
 // This is intended for use in standalone Lip Gloss only. In Bubble Tea, listen
 // for tea.BackgroundColorMsg in your Update function.
